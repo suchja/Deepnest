@@ -38,3 +38,12 @@ jobs:
       run: |
         npm install
         npm run w:build
+        npm run w:dist
+        
+    - name: Archive build output 
+      uses: actions/upload-artifact@v3
+      with:
+        name: deepnest-win32-x64
+        path: .\deepnest-win32-x64
+        retention-days: 1
+        
